@@ -1,0 +1,189 @@
+file 10401 1633152805                                           
+version 2
+run General-0-20211002-05:25:29-17281
+attr configname General
+attr datetime 20211002-05:25:29
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 17281
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.node[*].numApps 1
+param *.node[*].app[0].typename "\"vanetsimulation.veins_inet.VeinsInetSampleApplication\""
+param *.node[*].app[0].interface "\"wlan0\""
+param *.node[*].wlan[0].opMode "\"p\""
+param *.node[*].wlan[0].radio.bandName "\"5.9 GHz\""
+param *.node[*].wlan[0].radio.channelNumber 3
+param *.node[*].wlan[0].radio.transmitter.power 20mW
+param *.node[*].wlan[0].radio.bandwidth "10 MHz"
+param *.node[*].ipv4.configurator.typename "\"HostAutoConfigurator\""
+param *.node[*].ipv4.configurator.interfaces "\"wlan0\""
+param *.node[*].ipv4.configurator.mcastGroups "\"224.0.0.1\""
+param *.node[*].mobility.typename "\"VeinsInetMobility\""
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"square.launchd.xml\")"
+param *.manager.moduleType "\"vanetsimulation.veins_inet.VeinsInetCar\""
+
+vector 0 Scenario.node[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 Scenario.node[0].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 Scenario.node[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 3 Scenario.node[0].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 4 Scenario.node[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 Scenario.node[1].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 6 Scenario.node[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 Scenario.node[1].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 8 Scenario.node[2].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 Scenario.node[2].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 10 Scenario.node[2].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 11 Scenario.node[2].wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 12 Scenario.node[0].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 13 Scenario.node[0].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 14 Scenario.node[0].lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 15 Scenario.node[0].lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 16 Scenario.node[0].wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 17 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 18 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 19 Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 20 Scenario.node[0].wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 21 Scenario.node[0].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 22 Scenario.node[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 23 Scenario.node[0].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 24 Scenario.node[0].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 25 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 26 Scenario.node[0].wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 27 Scenario.node[0].wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 28 Scenario.node[0].wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 29 Scenario.node[0].wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 30 Scenario.node[0].wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 31 Scenario.node[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+0	7030 41 2 230 0.1 20 4 0 3 5 13
+1	7071 10 2 2 0.1 0.1 1 3 3 3 9
+2	7081 21 2 230 0.1 20 2 0 1 1 1
+3	7102 11 2 2 0.1 0.1 1 15 15 15 225
+4	7113 33 55 55 5.1 5.1 3 0 2 2 4
+5	7146 11 55 55 5.1 5.1 1 3 3 3 9
+6	7157 11 55 55 5.1 5.1 1 1 1 1 1
+7	7168 12 55 55 5.1 5.1 1 15 15 15 225
+8	7180 39 108 108 10.1 10.1 3 0 2 2 4
+9	7219 13 108 108 10.1 10.1 1 3 3 3 9
+10	7232 14 108 108 10.1 10.1 1 1 1 1 1
+11	7246 15 108 108 10.1 10.1 1 15 15 15 225
+12	7261 28 210 219 20 20 2 100 100 200 20000
+13	7289 28 212 220 20 20 2 108 108 216 23328
+14	7317 28 214 222 20 20 2 128 128 256 32768
+15	7345 28 214 222 20 20 2 128 128 256 32768
+16	7373 28 217 225 20 20 2 130 130 260 33800
+17	7401 28 217 225 20 20 2 158 158 316 49928
+18	7429 48 217 229 20 20 4 0 2 4 6
+19	7477 13 217 217 20 20 1 12 12 12 144
+20	7490 24 217 228 20 20 2 0 1 1 1
+21	7514 28 218 226 20 20 2 108 108 216 23328
+22	7542 24 218 226 20 20 2 1 2 3 5
+23	7566 28 219 227 20 20 2 100 100 200 20000
+24	7594 2661 219 219 0.1 20 200 0 0 0 0
+25	10255 28 229 229 20 20 2 158 158 316 49928
+26	10283 24 229 229 20 20 2 0 0 0 0
+27	10307 24 229 229 20 20 2 1 2 3 5
+28	10331 19 229 229 20 20 1 12000000 12000000 12000000 1.44e+14
+29	10350 14 229 229 20 20 1 158 158 158 24964
+30	10364 12 229 229 20 20 1 1 1 1 1
+31	10376 24 230 231 20 20 2 1 2 3 5
+
