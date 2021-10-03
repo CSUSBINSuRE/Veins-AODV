@@ -1,0 +1,3 @@
+package vanetsimulation;
+
+@license(LGPL);
